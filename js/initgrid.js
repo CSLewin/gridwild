@@ -28,6 +28,12 @@ map.createPane("gridPane");
 map.getPane("gridPane").style.zIndex = 420;
 map.getPane("gridPane").style.pointerEvents = "none";
 
+// Canvas renderer for heat tiles. With fog off in a dense area, SVG
+// would render thousands of <path> elements per pan and repaint them
+// on pointer drag; on a mid-tier mobile CPU that's the "slow as shit"
+// complaint. A single canvas draw sidesteps the per-element DOM cost.
+const heatCanvas = L.canvas({ pane: "gridHeatPane", padding: 0.1 });
+
 // Layer containers
 const gridHeatLayer = L.layerGroup([], { pane: "gridHeatPane" }).addTo(map);
 const gridLineLayer = L.layerGroup([], { pane: "gridPane" }).addTo(map);
@@ -880,6 +886,7 @@ const GRID_LINE_STYLE = {
 // Optional: style (heat tiles)
 const HEAT_TILE_STYLE_BASE = {
   pane: "gridHeatPane",
+  renderer: heatCanvas,
   interactive: false,
   weight: 0,
   stroke: false
