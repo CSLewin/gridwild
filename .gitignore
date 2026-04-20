@@ -1,0 +1,6 @@
+.claude/
+.venv/
+.playwright-bench/
+__pycache__/
+*.pyc
+.DS_Store
