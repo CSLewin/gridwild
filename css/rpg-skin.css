@@ -1,0 +1,173 @@
+/* RPG skin — additive overlay.
+   Assets: Kenney Pixel UI Pack + Tiny Dungeon + Tiny Town, all CC0.
+   Loaded AFTER index.html's inline <style> so same-specificity rules win. */
+
+.gw-sidebar .gw-panel,
+.gw-checklist,
+.hud,
+.gw-clado-wrap,
+.btn,
+.gw-toggle,
+.hud-toggle,
+.gw-user-heading-body {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* --- 9-slice frames --- */
+
+.gw-sidebar .gw-panel {
+  background: none;
+  border: 6px solid transparent;
+  border-image: url("../assets/rpg/frame-tan.png") 6 fill repeat;
+  border-radius: 0;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.28);
+  padding: 8px 10px;
+  color: #2a1c0a;
+}
+
+.hud {
+  background: none;
+  border: 6px solid transparent;
+  border-image: url("../assets/rpg/frame-brown.png") 6 fill repeat;
+  border-radius: 0;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.32);
+  color: #f2e3c6;
+  font-family: Georgia, "Palatino Linotype", Palatino, serif;
+}
+
+.hud-header b,
+.hud b {
+  color: #ffe9b0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gw-clado-wrap {
+  background: none;
+  border: 6px solid transparent;
+  border-image: url("../assets/rpg/frame-grey.png") 6 fill repeat;
+  border-radius: 0;
+  color: #1e1e1e;
+}
+
+.gw-checklist {
+  background: none;
+  border: 6px solid transparent;
+  border-image: url("../assets/rpg/frame-tan.png") 6 fill repeat;
+  border-radius: 0;
+}
+
+/* Titles: old-book serif + small caps feel */
+.gw-title,
+.gw-legend-title,
+.gw-clado-title,
+.gw-summary-title {
+  font-family: Georgia, "Palatino Linotype", Palatino, serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+/* --- Buttons --- */
+
+.btn,
+.gw-toggle,
+.hud-toggle {
+  background: none;
+  border: 6px solid transparent;
+  border-image: url("../assets/rpg/frame-brown.png") 6 fill repeat;
+  border-radius: 0;
+  color: #f2e3c6;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  padding: 4px 10px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.32);
+  cursor: pointer;
+  transition: none;
+}
+
+.btn:active,
+.gw-toggle:active,
+.hud-toggle:active,
+.btn:focus-visible,
+.gw-toggle:focus-visible,
+.hud-toggle:focus-visible {
+  border-image: url("../assets/rpg/frame-brown-pressed.png") 6 fill repeat;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.32);
+  transform: translateY(2px);
+  outline: none;
+}
+
+.gw-toggle {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.hud-toggle {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* --- User marker: swap emoji for Theoden sprite --- */
+
+.gw-user-heading-body {
+  font-size: 0;            /* hide the 🧍 glyph */
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/rpg/druid.png");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.55));
+}
+
+.gw-user-heading-arrow {
+  color: #ffd94a;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  font-size: 10px;
+  top: -2px;
+}
+
+/* --- Text legibility on the dark brown HUD --- */
+
+.hud .gw-legend,
+.hud .gw-legend-subtitle,
+.hud .gw-legend-rowlabel,
+.hud .gw-legend-axislabels,
+.hud .gw-legend-foot,
+.hud .gw-summary-body,
+.hud .gw-clado-subtitle,
+.hud .gw-clado-hint,
+.hud #status {
+  color: #f2e3c6;
+}
+
+.hud .gw-summary-title,
+.hud .gw-clado-title {
+  color: #ffe9b0;
+}
+
+.gw-legend {
+  border-top: 1px solid rgba(242, 227, 198, 0.28);
+}
+
+.gw-checklist label {
+  color: #2a1c0a;
+}
+
+.gw-clado-wrap .gw-clado-hint {
+  color: #3a3a3a;
+}
+
+/* Legend chips: small frame so they don't float unframed on dark wood */
+.gw-chip {
+  border: 1px solid rgba(0,0,0,0.45);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+}

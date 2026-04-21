@@ -4,3 +4,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# raw asset-pack zips + extracts used to pick the sprites we ship;
+# keep locally for future pack hunts, but the repo only commits the
+# small slice of files actually referenced by css/rpg-skin.css
+assets/rpg/_packs/
